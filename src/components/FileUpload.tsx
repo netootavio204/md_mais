@@ -43,16 +43,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({ onFileParsed }) => {
         // Parsear o chat do WhatsApp
         const messages = parseWhatsAppChat(rawText);
 
-        // Logs do console conforme especificações da Fase 1 e 2
-        console.log("================================================");
-        console.log(`📄 ChatWeaver - Arquivo Lido: ${file.name}`);
-        console.log(`Tamanho: ${(file.size / 1024).toFixed(2)} KB`);
-        console.log(`Mensagens Encontradas: ${messages.length}`);
-        console.log("================================================");
-        console.log("Amostra das Mensagens Parseadas:", messages.slice(0, 5));
-        console.log("================================================");
-
         setFileContent(rawText);
+
         setParsedMessages(messages);
         const lines = rawText.split("\n").length;
         setLineCount(lines);
@@ -237,7 +229,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({ onFileParsed }) => {
                   <span className="flex items-center gap-1 text-slate-300 font-medium">
                     <Eye className="w-3.5 h-3.5 text-emerald-400" /> Prévia das Mensagens Parseadas
                   </span>
-                  <span className="text-[10px] text-emerald-400 font-mono">F12 para Log Completo</span>
+                  <span className="text-[10px] text-emerald-400 font-medium bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Privacidade Garantida</span>
                 </div>
                 {parsedMessages.length > 0 ? (
                   <div className="space-y-1.5 max-h-32 overflow-y-auto pr-1">

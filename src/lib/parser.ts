@@ -97,8 +97,6 @@ export function parseWhatsAppChat(rawText: string): ChatMessage[] {
     }
   }
 
-  // Debug no console conforme solicitado
-  console.log("ChatMessage array gerado (total:", messages.length, "):", messages);
-
   return messages;
 }
+
