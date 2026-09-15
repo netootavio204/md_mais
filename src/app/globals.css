@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080c14;
+  --foreground: #e2e8f0;
+
+  --card: #0d1322;
+  --card-foreground: #f1f5f9;
+
+  --primary: #10b981;
+  --primary-hover: #059669;
+  --primary-foreground: #022c22;
+
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+
+  --accent: #064e3b;
+  --accent-foreground: #ecfdf5;
+
+  --border: #1e293b;
+  --border-focus: #10b981;
+  --input: #1e293b;
+  --ring: #10b981;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.06) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+  }
+}
+
+.glow-active {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Otimizações para Impressão e Captura de PDF */
+@media print {
+  header, footer, .file-upload-container, button {
+    display: none !important;
+  }
+  body {
+    background: #efeae2 !important;
+    color: #000 !important;
+  }
+  .pdf-messages-area {
+    max-height: none !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+}
+
